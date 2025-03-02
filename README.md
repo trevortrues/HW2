@@ -7,11 +7,6 @@ git clone <https://github.com/trevortrues/HW2>
 cd recipe-site
 ```
 
-2. Unzip contents:
-```sh
-npm install
-```
-
 2. Install dependencies:
 ```sh
 npm install
