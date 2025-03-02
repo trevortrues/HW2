@@ -4,7 +4,7 @@
 1. Clone the repository:
 ```sh
 git clone <https://github.com/trevortrues/HW2>
-cd recipe-site
+cd HW2
 ```
 
 2. Install dependencies:
