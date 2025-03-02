@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Recipes</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>My Recipe Site</h1>
+        <nav class="links">
+            <a class="link" href="/">Home</a>
+            <a class="link" href="/recipes">Recipes</a>
+            <a class="link" href="/add-recipe">Add Recipe</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Recipes</h1>
+        
+        <% Object.keys(categorizedRecipes).forEach(category => { %>
+            <h2><%= category %></h2>
+            <% if (categorizedRecipes[category].length > 0) { %>
+                <ul>
+                    <% categorizedRecipes[category].forEach(recipe => { %>
+                        <li>
+                            <h3><a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a></h3>
+                            <p><%= recipe.description %></p>
+                        </li>
+                    <% }); %>
+                </ul>
+            <% } else { %>
+                <p>No recipes available in this category.</p>
+            <% } %>
+        <% }); %>
+    </div>
+</body>
+</html>

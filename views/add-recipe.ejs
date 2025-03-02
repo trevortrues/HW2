@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Recipe</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Recipe Site</h1>
+        <nav class="links">
+            <a class="link" href="/">Home</a>
+            <a class="link" href="/recipes">Recipes</a>
+            <a class="link" href="/add-recipe">Add Recipe</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Add a New Recipe</h1>
+        <form action="/add-recipe" method="POST">
+            <label>Title:</label>
+            <input type="text" name="title" required>
+            <label>Description:</label>
+            <textarea name="description" required></textarea>
+            <label>Protein Type:</label>
+            <select name="protein_type" required>
+                <option value="Beef">Beef</option>
+                <option value="Chicken">Chicken</option>
+                <option value="Tofu">Tofu</option>
+                <option value="Grains">Grains</option>
+            </select>
+            <label>Ingredients (Select from List, use comma-separated IDs):</label>
+            <input type="text" name="ingredient_ids" required placeholder="e.g., 1,2,3">
+            <ul>
+                <% ingredients.forEach(ingredient => { %>
+                    <li><strong>ID:</strong> <%= ingredient.id %> - <%= ingredient.name %></li>
+                <% }); %>
+            </ul>
+            <button type="submit">Add Recipe</button>
+        </form>
+    </div>
+</body>
+</html>
